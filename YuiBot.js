@@ -5,13 +5,13 @@ messageCacheMaxSize: 500,
 messageCacheLifetime: 120,
 messageSweepInterval: 60
 });
-const token = 'MzA1MTA2MDAyMDMyNzIxOTIw.C95gpg.yEKErSOH5Jvhxrp5MV-oHhE6Koo'
+const token = 'token'
 const config = require("./config.json");
 const fs = require("fs");
 let points = JSON.parse(fs.readFileSync('./points.json', 'utf8'));
 const prefix = "y.";
 const newUsers = [];
-const hook = new Discord.WebhookClient('317405212484567040', 'UOeUr3Fkaqpu025DwLQvxHOfZXHPwjQFN-8HbK6-K7ViSmbmnMa0Ib3b40aYIrXUstnp');
+const hook = new Discord.WebhookClient('token', 'id');
 
 // Send a message using the webhook
 hook.send('I am now alive!');
@@ -498,10 +498,10 @@ yui.on('message', msg => {
 yui.on('message', msg => {
   var args = msg.content.split(/[ ]+/);
   if(commandIs("tsay", msg)) {
-    if(msg.author.id !== "292883576654004235") return; {
+    if(msg.author.id !== "id") return; {
     msg.delete();
   }
-    msg.channel.send(`**Yui Team Dev's message[Yui]:** ` + '***`' + args.join(" ").substring(6) + '`***');
+    msg.channel.send(`**Yui Team Dev's message[Name]:** ` + '***`' + args.join(" ").substring(6) + '`***');
 }
 });
 yui.on('message', msg => {
@@ -517,7 +517,7 @@ yui.on('message', msg => {
 yui.on('message', msg => {
   var args = msg.content.split(/[ ]+/);
   if(commandIs("tsay", msg)) {
-    if(msg.author.id !== "281598752005947394") return; {
+    if(msg.author.id !== "id") return; {
     msg.delete();
   }
   msg.channel.send("", {embed: {
@@ -539,7 +539,7 @@ yui.on('message', msg => {
 yui.on('message', msg => {
   var args = msg.content.split(/[ ]+/);
   if(commandIs("tsay", msg)) {
-    if(msg.author.id !== "131403526411780096") return; {
+    if(msg.author.id !== "id") return; {
     msg.delete();
   }
     msg.channel.send("", {embed: {
@@ -561,7 +561,7 @@ yui.on('message', msg => {
 yui.on('message', msg => {
   var args = msg.content.split(/[ ]+/);
   if(commandIs("tsay", msg)) {
-    if(msg.author.id !== "292149267865534464") return; {
+    if(msg.author.id !== "id") return; {
     msg.delete();
   }
   msg.channel.send("", {embed: {
@@ -583,7 +583,7 @@ yui.on('message', msg => {
 yui.on('message', msg => {
   var args = msg.content.split(/[ ]+/);
   if(commandIs("tsay", msg)) {
-    if(msg.author.id !== "240456948460290048") return; {
+    if(msg.author.id !== "id") return; {
     msg.delete();
   }
   msg.channel.send("", {embed: {
