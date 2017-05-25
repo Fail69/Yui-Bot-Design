@@ -1,37 +1,58 @@
-## Welcome to GitHub Pages
+# Welcome to YuiBot Pages
+This is some YuiBot doc (basic discord.js), you can use it as you want.
 
-You can use the [editor on GitHub](https://github.com/Fail69/Yui-Bot-Design/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+## Some commands:
+y.saydl: 
+yui.on('message', msg => {
+  var args = msg.content.split(/[ ]+/);
+  if(commandIs('saydl', msg)) {
+    msg.delete();
+    if(hasRole(msg.member, "@everyone")){
+      if(args.length === 1){
+        msg.channel.send('You did not use it properly. Usage: `y.saydl (message you want to say)`');
+    } else {
+        msg.channel.send(args.join(" ").substring(7));
+      }
+    } else {
+    msg.channel.send('You, pleb, do not have the minimum role to do this action');
+  }
+}
+});
+y.lvl:
+yui.on("message", msg => {
+  if (!msg.guild) return;
+  if (msg.author.bot) return;
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+  if (!points[msg.author.id]) points[msg.author.id] = {
+    points: 0,
+    level: 0
+  };
+  let userData = points[msg.author.id];
+  userData.points++;
 
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/Fail69/Yui-Bot-Design/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+  let curLevel = Math.floor(0.1 * Math.sqrt(userData.points));
+  if (curLevel > userData.level) {
+    userData.level = curLevel;
+    msg.reply("", {embed: {
+    color: 5497106,
+      title: "Level up!",
+      description: `${msg.author.username}, You have just leveled up to level **${curLevel}**! good job, goshoujin-sama!`
+  }
+})
+}
+if (msg.content.startsWith(prefix + "lvl")) {
+  msg.channel.send("", {embed: {
+  color: 3447003,
+  author: {
+    name: msg.author.username,
+    icon_url: msg.author.avatarURL
+  },
+    title: "Goshoujin-sama's actual level",
+    description: `Your actual level is ${userData.level}, with ${userData.points} points, goshoujin-sama.`
+}
+})
+}
+  fs.writeFile('./points.json', JSON.stringify(points), (err) => {
+    if (err) console.error(err)
+  });
+});
