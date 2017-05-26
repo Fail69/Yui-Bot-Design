@@ -105,6 +105,20 @@ if (msg.content.startsWith(prefix + "lvl")) {
     if (err) console.error(err)
   });
 });
+yui.on("message", msg => {
+  if(commandIs("traps", msg)) {
+    var sayings = ["https://cdn.discordapp.com/attachments/290692704755646474/317709811150225408/520.jpg",
+                   "https://cdn.discordapp.com/attachments/290692704755646474/317709627577991169/Jorge.png",
+                   "https://cdn.discordapp.com/attachments/290692704755646474/317709990632882176/17553805_1272709902784418_6800477749161082656_n.jpg",
+                   "https://cdn.discordapp.com/attachments/290692704755646474/317710253900955649/Felix.Argyle.full.2018176.jpg",
+                   "https://cdn.discordapp.com/attachments/290692704755646474/317710358204907522/full_body_3_by_matthewrock-d81swlo.jpg",
+                   "https://cdn.discordapp.com/attachments/290692704755646474/317713240421564417/35f2f5baeebf98f20efd70f49ac884e0fe263add_hq.jpg"];
+
+    var result = Math.floor((Math.random() * sayings.length) + 0); {
+      msg.channel.send(sayings[result]);
+    }
+  }
+});
 yui.on('message', msg => {
   if (!msg.guild) return;
   if (commandIs('join', msg)) {
