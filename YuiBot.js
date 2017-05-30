@@ -32,6 +32,7 @@ function hasRole(mem, role) {
     return false;
   }
 }
+//Progress Bar
 yui.on("ready", function() {
   var ProgressBar = require('progress')
 
@@ -63,6 +64,12 @@ console.log("Guilds on: "+yui.guilds.size);
 console.log(yui.guilds.map(g=>g.name).join("\n"));
 console.log("---------------");
 });
+//Console Log codes part
+yui.on("message", msg => {
+  if(msg.content.startsWith(prefix)){
+    console.log(`\n${msg.author.username} used a command from ${msg.guild.name}`)
+  }
+})
 yui.on("message", msg => {
   if(commandIs("invlink", msg)) {
     msg.channel.send(`You can invite me with this ${config.invLink}`)
