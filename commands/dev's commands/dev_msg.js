@@ -12,14 +12,14 @@ class DevMsgCommand extends commando.Command {
 
   async run(msg, args) {
     var args = msg.content.split(/[ ]+/);
-    if (msg.author.id !== "131403526411780096") return; {
+    if (msg.author.id !== "ID_here_uwu") return; {
       msg.delete();
     }
     msg.channel.send("", {
       embed: {
         color: 6385317,
         author: {
-          name: msg.author.username + " [Yui's Creator]",
+          name: msg.author.username + " [Something uwu]",
           icon_url: msg.author.avatarURL
         },
         title: "Yui Team Dev",
