@@ -1,3 +1,4 @@
+////not working, and not gonna try and fix it
 const commando = require('discord.js-commando');
 const Discord = require('discord.js');
 const google = require('../../util/google');
