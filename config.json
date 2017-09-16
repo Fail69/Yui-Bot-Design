@@ -1,1 +1,15 @@
-{"name":"name","author":"authors","ownerID":"ID","invLink":"Bot inv link","main":"YuiBot.js","prefix":"Prefix","token":"token","clbotApiKey":"ApiKey"}
+{"name":"Bot Name",
+  "author":"Author",
+  "ownerID":"YourID",
+  "invLink":"invitation_link",
+  "main":"main.js",
+  "prefix":"<your prefi>",
+  "token":"your_token",
+  "clbotApiKey":"Clever_Bot_Api_Key",
+  "danLogin": "Danbooru",
+  "danAPIKey":"Danbooru_Api_Key",
+  "no_error_tracking": true,
+  "osu_token":"osu_api_token",
+  "osu_username":"Your Username",
+  "osu_password":"Your Password"
+}
