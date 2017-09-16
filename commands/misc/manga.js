@@ -1,3 +1,4 @@
+////not working, and not gonna try and fix it
 const commando = require('discord.js-commando');
 const Discord = require('discord.js');
 const axios = require('axios');
@@ -25,8 +26,8 @@ class MangaCommand extends commando.Command {
     try {
       let authRequest = await axios.post(`https://anilist.co/api/auth/access_token`, {
         grant_type: 'client_credentials',
-        client_id: 'fail69-o3ia3',
-        client_secret: '72kPUCqMHZfwQiIVOWXuS1KXSW'
+        client_id: 'Client_ID',
+        client_secret: 'You_Know_What_This_Is'
       });
       let accessToken = authRequest.data.access_token;
       let mangaRequest = await axios({
